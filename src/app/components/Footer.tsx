@@ -63,7 +63,6 @@ export function Footer() {
             <h3 className="text-white font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-sm">
               <li>contact@nexus-aidc.com</li>
-              <li>+971-50-625-4421</li>
             </ul>
           </div>
         </div>
