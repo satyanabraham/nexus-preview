@@ -1,0 +1,71 @@
+===========================================
+COPY AND PASTE THESE COMMANDS ONE BY ONE
+===========================================
+
+OPTION 1: EASIEST - Re-download project from Figma Make
+--------------------------------------------------------
+1. Go back to Figma Make
+2. Download/Export your project again
+3. Extract to a NEW folder
+4. Open Command Prompt in that folder
+5. Run these commands:
+
+npm install
+npm run build
+
+
+OPTION 2: Clear cache and rebuild (if you can't re-download)
+-------------------------------------------------------------
+Windows Command Prompt - Copy these ONE BY ONE:
+
+rmdir /s /q node_modules
+rmdir /s /q dist
+del package-lock.json
+npm cache clean --force
+npm install
+npm run build
+
+
+Windows PowerShell - Copy these ONE BY ONE:
+
+Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue
+Remove-Item -Recurse -Force dist -ErrorAction SilentlyContinue
+Remove-Item -Force package-lock.json -ErrorAction SilentlyContinue
+npm cache clean --force
+npm install
+npm run build
+
+
+Mac/Linux Terminal - Copy these ONE BY ONE:
+
+rm -rf node_modules dist package-lock.json
+npm cache clean --force
+npm install
+npm run build
+
+
+===========================================
+WHAT YOU SHOULD SEE WHEN IT WORKS:
+===========================================
+
+✓ 28 modules transformed
+✓ built in 2s
+dist/index.html created
+[No red errors!]
+
+
+===========================================
+AFTER BUILD SUCCEEDS, DEPLOY:
+===========================================
+
+npx vercel --prod
+
+Then follow the prompts!
+
+
+===========================================
+NEED MORE HELP?
+===========================================
+
+Read: FIX_BUILD_ERROR.md (detailed guide)
+Or: CACHE_FIX.md (cache clearing guide)
